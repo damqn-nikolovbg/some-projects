@@ -1,0 +1,103 @@
+html, body, div, h1, h2, h3, ul, li, a {
+  margin: 0;
+  padding: 0; }
+
+html {
+  height: 100%;
+  min-height: 100%; }
+
+@font-face {
+  font-family: 'Griffy';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Griffy"), local("Griffy-Regular"), url(http://themes.googleusercontent.com/static/fonts/griffy/v1/f4FUXlL5FPqftKJ2T0mqXg.woff) format("woff"); }
+
+body {
+  color: #ffffff;
+  font-size: 16px; }
+  body div#wrapper {
+    width: 960px;
+    border: 1px solid black;
+    margin: 0 auto;
+    color: #000; }
+    body div#wrapper div#header {
+      positon: relative;
+      /*margin: 15px;*/
+      padding: 15px;
+      zoom: 1; }
+      body div#wrapper div#header:after {
+        clear: both;
+        display: block;
+        height: 0;
+        content: " "; }
+      body div#wrapper div#header h1 {
+        font-family: 'Griffy';
+        font-size: 2.3em;
+        text-align: left;
+        border-bottom: 3px solid black;
+        padding-bottom: 15px; }
+      body div#wrapper div#header div#nav {
+        float: right;
+        display: inline-block;
+        margin: 0 15px;
+        margin-top: -20px; }
+        body div#wrapper div#header div#nav ul {
+          list-style-type: none; }
+          body div#wrapper div#header div#nav ul li {
+            display: inline-block;
+            border: none;
+            border: 1px solid black;
+            border-radius: 5px;
+            /*padding: 5px;*/
+            margin: 0 5px;
+            /*margin-left: 10px;*/
+            background-color: #fff; }
+            body div#wrapper div#header div#nav ul li a {
+              display: block;
+              
+              text-decoration: none;
+              color: black;
+              font-size: 1.4em;
+              padding: 5px 10px; }
+              body div#wrapper div#header div#nav ul li a:hover {
+                background-color: #ccc; }
+
+@media only screen and (max-width: 960px) {
+  body div#wrapper {
+    width: 99%; }
+    body div#wrapper div#header h1 {
+      text-align: right; }
+    body div#wrapper div#header div#nav {
+      position: relative;
+      top: -10px;
+      float: left;
+      margin-top: 0; }
+      body div#wrapper div#header div#nav ul {
+        margin-right: 15px;
+        text-align: left; } }
+@media only screen and (max-width: 640px) {
+  body div#wrapper div#header h1 {
+    border: none; }
+  body div#wrapper div#header div#nav {
+    width: 460px; }
+    body div#wrapper div#header div#nav ul {
+      position: static;
+      top: 0;
+      margin-top: 0; }
+      body div#wrapper div#header div#nav ul li {
+        font-size: 1.5em; } }
+@media only screen and (max-width: 480px) {
+  body div#wrapper div#header h1 {
+    border: none;
+    text-align: center;
+    font-size: 2.5em; }
+  body div#wrapper div#header div#nav {
+    width: 99%; }
+    body div#wrapper div#header div#nav ul {
+      width: 99%;
+      margin: 0 auto;
+      text-align: center; }
+      body div#wrapper div#header div#nav ul li {
+        display: block;
+        font-size: 1.3em; } }
+

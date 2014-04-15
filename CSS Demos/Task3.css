@@ -1,0 +1,94 @@
+html {
+  height: 100%;
+  min-height: 100%; }
+
+html, body, div, ul, li, a, span, img, fieldset, select, option, input, textarea, button, p {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: white;
+  font-size: 16px;
+  color: #333333; }
+  body div#wrapper {
+    width: 1024px; }
+    body div#wrapper ul#popup-box {
+      list-style-type: none;
+      margin-left: 20px;
+      margin-top: 15px;
+      padding: 10px;
+      margin: 15px;
+      width: 110px; }
+      body div#wrapper ul#popup-box li.popup-item {
+        border-bottom: 1px solid black;
+        /*width: 110px;*/
+        position: relative;
+        /*padding: 5px;*/ }
+        body div#wrapper ul#popup-box li.popup-item:first-of-type {
+          border-top: 1px solid black; }
+        body div#wrapper ul#popup-box li.popup-item > a {
+          text-decoration: none;
+          line-height: 40px;
+          padding: 10px 4px;
+          vertical-align: center;
+          color: #333333; }
+          body div#wrapper ul#popup-box li.popup-item > a span.current {
+            font-weight: bold; }
+          body div#wrapper ul#popup-box li.popup-item > a span {
+            color: black; }
+          body div#wrapper ul#popup-box li.popup-item > a img {
+            width: 25px;
+            vertical-align: center;
+            padding-top: 5px; }
+        body div#wrapper ul#popup-box li.popup-item > div {
+          display: block;
+          position: absolute;
+          left: 120px;
+          
+          top: 0px;
+          width: 200px;
+           }
+          body div#wrapper ul#popup-box li.popup-item > div > a {
+            padding: 0 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+            color: #333333;
+            text-decoration: none;
+            position: absolute;
+            left: 85%;
+           /*top:15px;
+			right: 5px;	 */
+            top: 10%; }
+            body div#wrapper ul#popup-box li.popup-item > div > a:hover {
+              text-decoration: underline; }
+          body div#wrapper ul#popup-box li.popup-item > div fieldset {
+            /*text-align: left;*/
+            /*padding-left: 15px;	*/
+            padding: 10px 15px;
+            border: 1px solid black; }
+            body div#wrapper ul#popup-box li.popup-item > div fieldset legend {
+              font-weight: bold;
+              font-size: 1.2em; }
+            body div#wrapper ul#popup-box li.popup-item > div fieldset textarea#ta-remarks {
+              border: 1px solid black;
+              height: 35px; }
+            body div#wrapper ul#popup-box li.popup-item > div fieldset button {
+              background: #666666;
+              background: -moz-linear-gradient(top, #cccccc 0%, #666666 100%);
+              background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cccccc), color-stop(100%, #666666));
+              background: -webkit-linear-gradient(top, #cccccc 0%, #666666 100%);
+              background: -o-linear-gradient(top, #cccccc 0%, #666666 100%);
+              background: -ms-linear-gradient(top, #cccccc 0%, #666666 100%);
+              background: linear-gradient(to bottom, #cccccc 0%, #666666 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#666666', GradientType=0);
+              border: none;
+              border-radius: 15px;
+              margin-top: 5px;
+              padding: 5px 10px;
+              font-size: 1.2em;
+              color: #333333; }
+              body div#wrapper ul#popup-box li.popup-item > div fieldset button:hover {
+                background: #cccccc; }
+        body div#wrapper ul#popup-box li.popup-item div.invisible {
+          display: none; }
+

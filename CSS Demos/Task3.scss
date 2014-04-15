@@ -1,0 +1,186 @@
+html{ 
+	height: 100%;
+	min-height: 100%;
+}
+
+html, body, div, ul, li, a, span, img, fieldset, select, option, input, textarea, button, p{ 
+	margin: 0;
+	padding: 0;
+}
+
+@mixin linear-gradient-button{ 
+	background: #666666;
+  background: -moz-linear-gradient(top, #cccccc 0%, #666666 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cccccc), color-stop(100%, #666666));
+  background: -webkit-linear-gradient(top, #cccccc 0%, #666666 100%);
+  background: -o-linear-gradient(top, #cccccc 0%, #666666 100%);
+  background: -ms-linear-gradient(top, #cccccc 0%, #666666 100%);
+  background: linear-gradient(to bottom, #cccccc 0%, #666666 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#666666', GradientType=0);
+}
+
+body
+{
+	background-color: white;
+	font-size: 16px;
+	color: #333333;
+
+	div#wrapper{ 
+		
+		width: 1024px;
+
+		ul#popup-box{ 
+			
+			list-style-type: none;
+			
+			margin-left: 20px;
+			margin-top: 15px;
+			padding: 10px;
+			margin: 15px;
+			
+			width: 110px;
+
+			li.popup-item{ 
+				
+				border-bottom: 1px solid black;
+				/*width: 110px;*/
+				
+				position: relative;
+
+				/*padding: 5px;*/
+
+				&:first-of-type{ 
+					
+					border-top: 1px solid black;
+				}
+
+				&>a{ 
+					
+					text-decoration: none;
+					
+					line-height: 40px;
+					padding: 10px 4px;
+
+					vertical-align: center;
+
+					color: #333333;
+
+					& span.current{ 
+						font-weight: bold;
+					}
+					
+					span{ 
+						
+						color: black;
+						
+					}
+
+					img{ 
+						width: 25px;
+						vertical-align: center;
+						padding-top: 5px;
+					}
+
+				}
+				
+				
+
+				&>div{ 
+					
+					display: block;
+					position: absolute;
+					left: 120px; /*tuk moe i 120%*/
+					top: 0px;
+					width: 200px; /*tuk tova go nqmashe*/
+
+					&>a{ 
+						
+						padding: 0 5px;
+
+						border: 1px solid black;
+						border-radius: 5px;
+
+						color: #333333;
+
+						text-decoration: none;
+
+						position: absolute;
+						left: 85%; /*top:15px;
+									right: 5px;	 */
+						top: 10%; 
+
+						&:hover{ 
+							
+							text-decoration: underline;
+						}
+					}
+
+					
+						fieldset{ 
+								
+							/*text-align: left;*/
+							/*padding-left: 15px;	*/
+							padding: 10px 15px;
+
+							border: 1px solid black;
+
+							legend{ 
+								
+								font-weight: bold;
+								font-size: 1.2em;
+							}
+
+							label{ 
+
+							}
+
+							select{ 
+								
+								option{ 
+
+								}
+
+							}
+							
+							textarea#ta-remarks{ 
+								border: 1px solid black;
+								height: 35px;
+							}
+
+							button{ 
+								
+								@include linear-gradient-button;
+
+								border: none;
+								border-radius: 15px;
+								
+								margin-top: 5px;
+								padding: 5px 10px;
+
+								font-size: 1.2em;
+
+								color: #333333;
+
+								&:hover{ 
+									
+									background: #cccccc;
+
+								}
+							}
+						}
+					
+
+				}
+
+				div.invisible{ 
+					
+					display: none;
+
+				}
+			}
+
+		}
+
+	}
+
+}

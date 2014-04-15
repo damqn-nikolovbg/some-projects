@@ -1,0 +1,34 @@
+body
+{
+	background-color: green;
+
+	div#radio{ 
+		/*overflow: hidden;*/
+		form{ 
+			
+			label{ 
+				/*position:relative;*/
+
+				img{ 
+
+				}
+			}
+
+			input[type="radio"]{ 
+				display:none;
+			}
+
+			&>img{ 
+				display: none;
+			}
+
+			input[type=radio]:checked+img{ 
+				display:inline-block;
+				position:absolute;
+				top: 50%;
+				left: 30%;
+			}
+		}
+	}
+
+}

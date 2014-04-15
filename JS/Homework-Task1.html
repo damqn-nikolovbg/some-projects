@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JS Events Homework Task 1</title>
+    <style>
+        div {
+            margin: 0;
+            padding: 0;
+        }
+        div#image-container {
+            display: inline-block;
+            margin: 0 auto;
+            border: 1px solid green;
+
+        }
+
+        button#left-btn, button#right-btn {
+            width: 256px;
+            height: 256px;
+            display: inline-block;
+            border: none;
+        }
+
+        button#left-btn {
+            background: #ffffff url("images/left.png") no-repeat center top;
+            
+        }
+        button#right-btn {
+            background: #ffffff url("images/right.jpg") no-repeat center top;
+        }
+    </style>
+</head>
+<body>
+    <button id="left-btn"></button>
+
+    <div id="image-container">
+        <img src="images/01.jpg" alt="slider image" id="theImage" width="600" height="400"/>
+    </div>
+
+    <button id="right-btn"></button>
+
+    <script>
+        var leftBtn = document.getElementById("left-btn");
+        var rightBtn = document.getElementById("right-btn");
+        var theImage = document.getElementById("theImage");
+        var name = 1;
+
+        function changeImage(name) {
+            theImage.src = "images/0" + name + ".jpg";
+        }
+        
+        function onRightButtonClick() {
+            name++;
+            if (name >= 7) {
+                name = 1;
+            }
+            changeImage(name);
+        }
+
+        function onLeftButtonClick() {
+            name--;
+            if (name <= 0) {
+                name = 6;
+            }
+            changeImage(name);
+        }
+
+        leftBtn.addEventListener("click", onLeftButtonClick, false);
+        rightBtn.addEventListener("click", onRightButtonClick, false);
+    </script>
+</body>
+</html>

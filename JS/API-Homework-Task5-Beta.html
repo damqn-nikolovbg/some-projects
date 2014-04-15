@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>JS API Homework Task5 Bouncing Canvas</title>
+    <style>
+        html, body, div {
+            margin: 0;
+            padding: 0;
+        }
+        #canvasDiv {
+            margin: 0;
+            padding: 0;
+            /*margin-top: 30px;
+            margin-left: 29px;*/
+            /*padding: 20px;*/
+            border: 2px solid green;
+            display: inline-block;
+
+        }
+
+        button {
+            display: block;
+            text-align:center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div id="canvasDiv">
+        <canvas width ="650" height="400">
+            Canvas not supported
+        </canvas>
+    </div>
+
+    <script>
+        var ctx = document.getElementsByTagName("canvas")[0].getContext("2d");
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+        var maxPosX = ctx.canvas.width;
+        var maxPosY = ctx.canvas.height;
+        var startPosX = 15;
+        var startPosY = 150;
+        var radius = 15;
+        movePosX = 2;
+        movePosY = 2;
+        //var fillStyles = "#FF96B9";
+        //var strokeStyles = "green";
+        
+
+        function moveCircle(){
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+                ctx.strokeStyle = "green";
+                ctx.fillStyle = "#FF96B9";
+                ctx.lineWidth = 2;
+
+                ctx.beginPath();
+                ctx.arc(startPosX, startPosY, radius, 0, 2 * Math.PI, false);
+                ctx.closePath();
+                ctx.fill();
+                ctx.stroke();
+                
+                if (startPosX < radius || startPosX > maxPosX - radius) {
+                    movePosX = -movePosX;
+                }
+                else if (startPosY < radius || startPosY > maxPosY - radius) {
+                    movePosY = -movePosY;
+                }
+
+                startPosX += movePosX;
+                startPosY += movePosY;
+
+            }
+
+        setInterval(moveCircle, 20);
+
+
+
+    </script>
+</body>
+</html>

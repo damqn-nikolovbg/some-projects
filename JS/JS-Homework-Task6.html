@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#" id = "parent-link">Item</a>
+                <ul class ="invisible">
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#" id = "child-link">Sub item</a>
+                        <ul class ="invisible">
+                            <li><a href="#">Sub sub item</a></li>
+                            <li><a href="#">Sub sub item</a></li>
+                            <li><a href="#">Sub sub item</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function onBtnShowHideClick() {
+            var state = true;
+            var state1 = true;
+
+            var link = document.getElementById("parent-link");
+            console.log(link);
+
+            link.addEventListener("click", function (e) {
+
+                if (state) {
+                    var self = this;
+                    var invisible = self.nextElementSibling;
+                    invisible.style.display = "block";
+                }
+                else {
+                    var self = this;
+                    var invisible = self.nextElementSibling;
+                    invisible.style.display = "none";
+                }
+
+                state = !state;
+                e.preventDefault();
+
+            }, false);
+
+            var link1 = document.getElementById("child-link");
+            console.log(link1);
+
+            link1.addEventListener("click", function (e) {
+                
+                if (state1) {
+                    var self = this;
+                    var invisible = self.nextElementSibling;
+                    invisible.style.display = "block";
+                }
+                else {
+                    var self = this;
+                    var invisible = self.nextElementSibling;
+                    invisible.style.display = "none";
+                }
+
+                state1 = !state1;
+                e.preventDefault();
+            }, false);
+        }
+
+        window.onload = onBtnShowHideClick;
+    </script>
+</body>
+</html>

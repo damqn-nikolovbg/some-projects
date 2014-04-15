@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mitko project fourth image</title>
+    <link href="Fourth.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        
+        <header class="mainHeaderFourthPage">
+            <h1>Melonhood</h1>
+
+            <nav>
+                <ul id="mainNav">
+                    
+                    <li><a href="###" title="About us"><span>About us</span></a></li>
+                    <li><a href="###" title="what you think"><span>Tell us what you think</span></a></li>
+                    <li><a href="###" title="terms and conditions"><span>Terms and conditions</span></a></li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <div id="bodyDiv">
+
+            <hgroup>
+
+                <h2>Tell us what you think</h2>
+            </hgroup>
+
+            <form action ="demo.asp" method ="get">
+
+                <select name="types" id="optionGroup">
+                    <option value="" disabled selected style="display:none;">Choose type</option>
+                    <option value="what you think 1">What you think 1</option>
+                    <option value="what you think 2">What you think 2</option>
+                    <option value="what you think 3">What you think 3</option>
+                </select>
+                
+                <input type = "text" name="subject" placeholder="Subject" id="theSubject"/>
+
+                <textarea rows ="10" cols="50" placeholder="Share your thoughts..." id="theTextArea"></textarea>
+
+                <div id="text-email">
+                    <input type = "text" name="Name" placeholder="Your name..." id="theName" />
+
+                    <input type ="email" name="E-mail address" placeholder="Your email address" id="theEmail"/>
+                </div>
+
+                <div id="theCheckBox">
+                    <h3>Choose who should receive your oppinion</h3>
+
+                    <input type = "checkbox" name ="owner " value ="web site owner" /> <span>Web site owner</span> <br>
+                    <input type = "checkbox" name ="administrator " value ="web site administrator" /> <span>Web site administrator</span> <br>
+                    <input type = "checkbox" name ="manager " value ="web site manager" /> <span>Web site manager</span><br>
+                    <input type = "checkbox" name ="master editor " value ="web site master editor" /> <span>Web site editor</span> <br>
+
+                </div>
+
+                <div id="buttons">
+                    <button type ="submit" value ="Submit">Send</button>
+                    <button type="reset" value="Reset">Clear</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

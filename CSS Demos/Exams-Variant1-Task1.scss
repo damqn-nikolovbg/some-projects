@@ -1,0 +1,117 @@
+html, body, div, ul, li, a, aside{ 
+	margin: 0;
+	padding: 0;
+}
+
+html{ 
+	height: 100%;
+	min-height: 100%;
+}
+
+@mixin linear-grad-li{ 
+	background: #8977ff;
+  background: -moz-linear-gradient(top, #d29bff 0%, #8977ff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d29bff), color-stop(100%, #8977ff));
+  background: -webkit-linear-gradient(top, #d29bff 0%, #8977ff 100%);
+  background: -o-linear-gradient(top, #d29bff 0%, #8977ff 100%);
+  background: -ms-linear-gradient(top, #d29bff 0%, #8977ff 100%);
+  background: linear-gradient(to bottom, #d29bff 0%, #8977ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d29bff', endColorstr='#8977ff', GradientType=0);
+}
+
+body
+{
+	
+
+	 div#wrapper{ 
+		width: 960px;
+		font-size: 16px;
+		font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+
+		aside{ 
+			
+			@include linear-grad-li;
+
+			border: none;
+			border-radius: 10px;
+
+			margin-top: 10px;
+			margin-left: 20px;
+			/*padding: 5px;*/
+
+			width: 25%;
+
+			ul{
+				
+				list-style-type: none;
+
+				&>li{
+					
+					border-top: 1px solid black;
+					margin: 3px 10px;
+					padding: 10px 15px;
+
+					&:first-of-type{ 
+						border: none;
+					}
+
+					&:hover{ 
+							
+							border: 1px solid black;
+							border-radius: 10px;
+
+							&>ul{ 
+								display: block;
+							}
+						}
+
+					a{ 
+						position: relative;
+						left: 10%;
+						font-size: 1.3em;
+						color: black;
+
+						
+					}
+				}
+
+				li{ 
+					
+					a{ 
+						text-decoration: none;
+						color: black;
+					}
+
+					ul{ 
+						display: none;
+
+						position: absolute;
+						left: 250px;
+						top: -5px;
+
+						border: none;
+						border-radius: 10px;
+						background-color: #b5aaff;
+						background-image: url(imgs/arrow.png);
+						background-repeat: no-repeat;
+
+						padding: 5px;
+						padding-left: 20px;
+						text-align: center;
+
+						li{ 
+							width: 180px;
+							font-size: 0.8em;
+						}
+
+					}
+
+				}
+				
+			}
+
+		}
+
+	 }
+
+}

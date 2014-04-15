@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    Click Twice to expand and once to collapse. (Only the first one has sub items).
+ 
+    <ul>
+        <li ondblclick="expanded()" onclick="collapsed()">
+            Item
+            <ul id="subItem" >
+                <li>SubItem</li>
+                <li>SubItem</li>
+                <li>SubItem</li>
+                <li>SubItem</li>
+                <li>SubItem</li>
+            </ul>
+        </li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+    </ul>
+
+    <script>
+
+        var subItem = document.getElementById("subItem");
+        subItem.style.display = "none";
+
+        function expanded() {
+            subItem.style.display = "block";
+        }
+
+        function collapsed() {
+            subItem.style.display = "none";
+        }
+
+    </script>
+</body>
+</html>

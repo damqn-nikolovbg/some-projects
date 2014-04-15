@@ -1,0 +1,16 @@
+body {
+  background-color: green; }
+  body div#radio {
+    /*overflow: hidden;*/ }
+    body div#radio form label {
+      /*position:relative;*/ }
+    body div#radio form input[type="radio"] {
+      display: none; }
+    body div#radio form > img {
+      display: none; }
+    body div#radio form input[type=radio]:checked + img {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 30%; }
+

@@ -1,0 +1,157 @@
+html, body, div, h1, ul, li, p, span, input, button{ 
+	margin: 0;
+	padding: 0;
+}
+
+html{ 
+	height: 100%;
+	min-height: 100%;
+}
+
+@mixin linear-grad-div{ 
+	 background: #aaaaaa;
+  background: -moz-linear-gradient(top, #eeeeee 0%, #aaaaaa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #aaaaaa));
+  background: -webkit-linear-gradient(top, #eeeeee 0%, #aaaaaa 100%);
+  background: -o-linear-gradient(top, #eeeeee 0%, #aaaaaa 100%);
+  background: -ms-linear-gradient(top, #eeeeee 0%, #aaaaaa 100%);
+  background: linear-gradient(to bottom, #eeeeee 0%, #aaaaaa 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#aaaaaa', GradientType=0);
+}
+
+@mixin linear-grad-me{ 
+	background: #c1faff;
+  background: -moz-linear-gradient(top, #28edff 0%, #c1faff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #28edff), color-stop(100%, #c1faff));
+  background: -webkit-linear-gradient(top, #28edff 0%, #c1faff 100%);
+  background: -o-linear-gradient(top, #28edff 0%, #c1faff 100%);
+  background: -ms-linear-gradient(top, #28edff 0%, #c1faff 100%);
+  background: linear-gradient(to bottom, #28edff 0%, #c1faff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#28edff', endColorstr='#c1faff', GradientType=0);
+}
+
+@mixin linear-grad-toshko{ 
+	background: #6fff3a;
+  background: -moz-linear-gradient(top, #dfffd3 0%, #6fff3a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dfffd3), color-stop(100%, #6fff3a));
+  background: -webkit-linear-gradient(top, #dfffd3 0%, #6fff3a 100%);
+  background: -o-linear-gradient(top, #dfffd3 0%, #6fff3a 100%);
+  background: -ms-linear-gradient(top, #dfffd3 0%, #6fff3a 100%);
+  background: linear-gradient(to bottom, #dfffd3 0%, #6fff3a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfffd3', endColorstr='#6fff3a', GradientType=0);
+}
+
+body
+{
+	color: #555555;
+	font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+	font-size: 16px;
+
+	div#wrapper{ 
+		
+		width: 80%;
+
+		div{ 
+			
+			@include linear-grad-div;
+
+			margin-top: 3%;
+			margin-left: 3%;
+
+			border: 1px solid black;
+			border-radius: 15px;
+
+			width: 35%;
+
+			h1{ 
+				font-size: 1.8em;
+				text-align: center;
+				margin: 5% 5%;
+			}
+
+			ul.messages-list{ 
+				
+				list-style-type: none;
+
+				li{ 
+					
+					border: 1px solid black;
+					border-radius: 15px;
+
+					width: 200px;
+
+					padding: 5px 10px;
+					margin: 10px 15px;
+
+					&.me-item{ 
+						
+						@include linear-grad-me;
+						
+						position: relative;
+						left: 34%;
+
+						span.date{ 
+							
+							position: relative;
+							left: 35%;
+						}
+
+					}
+
+					&.toshko-item{ 
+						
+						@include linear-grad-toshko;
+
+						span:first-of-type{ 
+							position: relative;
+							left: 60%;
+						}
+
+					}
+
+					span:first-of-type{ 
+						
+						font-weight: bold;
+					}
+
+
+				}
+
+			}
+
+			input{ 
+				
+				border: none;
+				border-radius: 5px;
+
+				padding: 2px;
+				margin-left: 10px;
+				margin-bottom: 10px;
+
+				width: 70%;
+
+			}
+
+			button{ 
+
+				border: none;
+				border-radius: 10px;
+
+				font-size: 1.1em;
+
+				padding: 5px 15px;
+
+				margin-left: 5px;
+				margin-bottom: 10px;
+
+				&:hover{ 
+					
+					background: #eee;
+
+				}
+
+			}
+
+		}
+	}
+}
