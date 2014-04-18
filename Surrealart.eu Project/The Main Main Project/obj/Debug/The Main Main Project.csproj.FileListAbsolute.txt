@@ -1,0 +1,5 @@
+C:\Users\Damc\Desktop\The Main Main Project\The Main Main Project\The Main Main Project\bin\The Main Main Project.dll
+C:\Users\Damc\Desktop\The Main Main Project\The Main Main Project\The Main Main Project\bin\The Main Main Project.pdb
+C:\Users\Damc\Desktop\The Main Main Project\The Main Main Project\The Main Main Project\obj\Debug\The Main Main Project.csprojResolveAssemblyReference.cache
+C:\Users\Damc\Desktop\The Main Main Project\The Main Main Project\The Main Main Project\obj\Debug\The Main Main Project.dll
+C:\Users\Damc\Desktop\The Main Main Project\The Main Main Project\The Main Main Project\obj\Debug\The Main Main Project.pdb
