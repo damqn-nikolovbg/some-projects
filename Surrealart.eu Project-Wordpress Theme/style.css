@@ -155,6 +155,44 @@ p {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3); }
   #nav li:hover .current-cursor {
     display: inline-block; }
+	
+	#nav li:hover > .sub-menu{
+    display: block; }
+	
+	#nav > li .sub-menu{
+      display: none;
+      z-index: 444;
+      font-size: 14px;
+      font-family: Tahoma;
+      text-align: left;
+      margin-top: 0;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 45px;
+      left: 10px; }
+      #nav > li .sub-menu li {
+        line-height: 40px;
+        display: block;
+        border-top: 1px solid #a03a26;
+        border-bottom: 1px solid #812f1e; }
+		
+		 #nav > li .sub-menu li .current-cursor{
+			display: none;
+		 }
+		 
+        #nav > li .sub-menu li:hover {
+          background: #a03a26; }
+        #nav > li .sub-menu li a {
+			display: inline-block;
+          padding: 10px;
+          width: 200px;
+          background: #963724; }
+          #nav > li .sub-menu li a:hover {
+            background: #a03a26; }
+        #nav > li .sub-menu li:last-child {
+          border-bottom: none; }
+
 
 .current-cursor {
   display: none;

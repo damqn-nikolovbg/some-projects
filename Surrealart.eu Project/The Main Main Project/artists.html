@@ -4,22 +4,8 @@
     <meta charset="UTF-8" />
     <title>Artists</title>
     <link href="Styles.css" rel="stylesheet" />
-    <script src="js/jquery-1.9.0.js"></script>
-    <script>
-        $(function onDocumentReady() {
-            $("header nav > ul > li > a").on("click", function onNavItemClick(e) {
-                if (!$(this).parent().hasClass("selected")) {
-                    $("header nav ul li.selected").removeClass("selected");
-                    $(this).parent().addClass("selected");
-                }
+   
 
-                if (e.preventDefaults) {
-                    e.preventDefaults();
-                }
-                return false;
-            });
-        });
-	</script>
 </head>
 <body>
     <header id="the-header">
@@ -91,7 +77,7 @@
         <div class="wrapper cf">
 
              <div id="main-content">
-    <!--
+    
                 <header id="body-header">
                     <h2>ARTISTS</h2>
                 </header>
@@ -152,7 +138,7 @@
                     </article>
 
                 </section>
--->              
+             
         </div>
 
           

@@ -139,6 +139,8 @@ p {
 
 #nav {
   text-align: center; }
+  #nav li:hover > #subnav {
+    display: block; }
   #nav > li {
     font-family: mensch;
     word-spacing: -0.1em;
@@ -157,25 +159,30 @@ p {
       text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3); }
     #nav > li:hover .current-cursor {
       display: inline-block; }
-    #nav > li:hover #subnav {
+    #nav > li:hover > #subnav {
       display: block; }
     #nav > li #subnav {
       display: none;
+      z-index: 401;
       font-size: 14px;
       font-family: Tahoma;
       text-align: left;
       margin-top: 0;
       text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
-      position: relative;
-      top: -21px;
-      left: 25px; }
+      box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 68px;
+      left: 10px; }
       #nav > li #subnav li {
         line-height: 30px;
+        display: block;
         border-top: 1px solid #a03a26;
         border-bottom: 1px solid #812f1e; }
+        #nav > li #subnav li:hover {
+          background: #a03a26; }
         #nav > li #subnav li a {
           padding: 10px;
-          padding-right: 45px;
+          width: 100px;
           background: #963724; }
           #nav > li #subnav li a:hover {
             background: #a03a26; }
@@ -301,25 +308,28 @@ p {
     bottom: 0px;
     right: 0px;
     background: url(../img/corner-4.png) no-repeat top left; }
-  #main-wrapper #main-content section {
-    text-align: center;
-    width: 960px; }
-  #main-wrapper #main-content .feature {
-    background: #f3e4c8;
-    width: 300px;
-    margin-bottom: 50px;
-    margin-left: 15px;
-    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1); }
-    #main-wrapper #main-content .feature a {
-      color: #CB5432; }
+  #main-wrapper #main-content {
+    text-align: center; }
+    #main-wrapper #main-content section {
+      text-align: center;
+      width: 960px; }
+    #main-wrapper #main-content .feature {
+      background: #f3e4c8;
+      width: 300px;
+      margin-bottom: 50px;
+      margin-left: 15px;
+      box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1); }
+      #main-wrapper #main-content .feature a {
+        color: #CB5432; }
   #main-wrapper #body-header h2 {
+    width: 200px;
     color: #cb5432;
-    text-align: center;
     font-size: 3.4rem;
     word-spacing: -.1em;
     text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.5);
     margin-top: 20px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    margin-left: 40%; }
   #main-wrapper .thumb {
     position: relative;
     display: block;

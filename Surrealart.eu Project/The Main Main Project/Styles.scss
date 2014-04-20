@@ -172,7 +172,14 @@ p{
 
 	#nav{
 		text-align: center;
-		&>li{	
+
+		li{
+			&:hover>#subnav{
+				display:block;
+			}
+		}
+		&>li{
+			
 			font-family: mensch;
 			word-spacing: -0.1em;
 			line-height: 55px;
@@ -194,35 +201,39 @@ p{
 				text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
 			}
 
-			//&.selected current-cursor{
-				//display: inline-block;
-			//}
-
 			&:hover .current-cursor{
 				display: inline-block;
 			}
 
-			&:hover #subnav{
+			&:hover>#subnav{
 				display:block;
 			}
 
 			#subnav{
 				display: none;
+				z-index: 401;
 				font-size: 14px;
 				font-family: Tahoma;
 				text-align: left;
 				margin-top: 0;
 				text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+				box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
 
-				position: relative;
-				top: -21px;
-				left: 25px;
+				position: absolute;
+				top: 68px;
+				left: 10px;
 			
 				li{
 					line-height: 30px;
+					display: block;
+
+					&:hover{
+							background: #a03a26;
+						}
+
 					a{
 						padding: 10px;
-						padding-right: 45px;
+						width: 100px;
 						background: #963724;
 						&:hover{
 							background: #a03a26;
@@ -440,7 +451,7 @@ p{
 	/*------------MAIN CONTENT------------*/
 
 	#main-content{
-	//height: 700px;
+	text-align: center;
 		section{
 			text-align: center;
 			width: 960px;
@@ -461,14 +472,17 @@ p{
 	}
 
 	#body-header{
+		//text-align: center;
 			h2{
+				width: 200px;
 				color: #cb5432;
-				text-align: center;
+				//text-align: center;
 				font-size: 3.4rem;
 				word-spacing: -.1em;
 				text-shadow: 3px 3px 0 rgba(255, 255, 255, .5);
 				margin-top: 20px;
 				margin-bottom: 20px;
+				margin-left: 40%;
 			}
 	}
 
