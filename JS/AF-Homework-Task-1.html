@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Advanced functions-homework-task 1</title>
+</head>
+<body>
+     <ul>
+        <li>First item</li>
+        <li>Second item</li>
+    </ul>
+    <div>
+        <p>Opa</p>
+    </div>
+
+    <script>
+        var domWorker = (function () {
+
+            var buffer = document.createDocumentFragment();
+
+            function addElementToParrent(element, content, parrent) {
+                var parrentSelector = document.querySelector(parrent);
+                var childElement = document.querySelector(element);
+
+                childElement.innerHTML = content;
+
+                parrentSelector.appendChild(childElement);
+
+            }
+
+            /* domWorker.addElementToParrent("p", "This is a paragraph", "div"); */
+
+            function removeElementFromDOM(element) {
+               /* var parrentElement = document.querySelector(parrent);
+                var childElement = document.querySelector(element);
+
+                parrentElement.removeChild(childElement);*/
+
+                var elementSelector = document.querySelector(element);
+                elementSelector.parentNode.removeChild(elementSelector);
+            }
+
+            function addEvent(element, eventType, eventHandler) {
+                var elementSelector = document.querySelector(element);
+
+                elementSelector.addEventListener(eventType, eventHandler, false);
+            }
+
+            /*domWorker.addEvent("p", "click", function(){ 
+                alert("Clicked");
+            }); */
+
+          
+            function appendToBuffer(selector, element) {
+                buffer.appendChild(element);
+
+                var collection = buffer.querySelectorAll(selector);
+
+                if (collection.length === 100) {
+                    for (var cont = 0; count < 100; count++) {
+                        document.body.appendChild(collection[count]);
+                        buffer.removeChild(collection[count]);
+                    }
+                }
+            }
+           
+            function getElement(selector) {
+                var collection = document.querySelectorAll(selector);
+                return collection;
+            }
+
+            return {
+                addElementToParrent: addElementToParrent,
+                removeElementFromDOM: removeElementFromDOM,
+                addEvent: addEvent,
+                appendToBuffer: appendToBuffer, 
+                getElement: getElement
+
+            };
+
+        })();
+    </script>
+</body>
+</html>

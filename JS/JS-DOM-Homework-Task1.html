@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="text" id="tb-box-count" />
+    <a href="#" id="generate-boxes-btn" onclick="onGenerateBoxesButtonClick()" >GENERATE BOXES</a>
+    <div id="content">
+    </div>
+
+    <script>
+
+        var contentDiv = document.getElementById("content");
+
+
+        function generateRandomColor() {
+
+            var red = (Math.random() * 256) | 0;
+            var green = (Math.random() * 256) | 0;
+            var blue = (Math.random() * 256) | 0;
+
+            return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+
+        function generateBetween(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function makeDivShiny(shinyDiv) {
+
+            var divWidth = generateBetween(20, 100);
+            var divHeight = generateBetween(20, 100);
+            shinyDiv.style.width = divWidth + "px";
+            shinyDiv.style.height = divHeight + "px";
+
+            shinyDiv.style.backgroundColor = generateRandomColor();
+
+            shinyDiv.style.color = generateRandomColor();
+            shinyDiv.style.textAlign = "center";
+            shinyDiv.style.position = "absolute";
+
+            var topPos = Math.floor(Math.random() * (550 - 70) + 70);
+            shinyDiv.style.top = topPos + "px";
+            shinyDiv.style.left = Math.floor(Math.random() * 1200) + "px";
+
+            /* var leftPos = parseInt(Math.random());
+             shinyDiv.style.left = leftPos;*/
+
+            var strongEl = document.createElement("strong");
+            strongEl.innerHTML = "divdiv";
+            shinyDiv.appendChild(strongEl);
+
+            var borderRad = Math.floor(Math.random() * 100);
+            shinyDiv.style.borderRadius = borderRad + "px";
+
+            shinyDiv.style.borderColor = generateRandomColor();
+
+            var borderWidth = generateBetween(1, 20);
+            shinyDiv.style.borderWidth = borderWidth + "px";
+        }
+
+        function generateShinyDiv() {
+
+            var shinyDiv = document.createElement("div");
+            /*shinyDiv.classList.add("shiny-div");*/
+            makeDivShiny(shinyDiv);
+            contentDiv.appendChild(shinyDiv);
+        }
+
+        function onGenerateBoxesButtonClick() {
+
+            var startTime = new Date();
+
+
+
+            while (contentDiv.firstChild) {
+                contentDiv.removeChild(contentDiv.firstChild);
+            }
+
+            var count = (document.getElementById("tb-box-count").value | 0) || 5;
+
+            for (var i = 0; i < count; i++) {
+                /*var newDiv = document.createElement("div");*/
+                generateShinyDiv();
+                /*contentDiv.appendChild(newDiv);*/
+            }
+
+            console.log(new Date() - startTime);
+            return false;
+
+        }
+
+    </script>
+</body>
+</html>

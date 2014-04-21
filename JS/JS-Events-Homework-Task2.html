@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JS Events Homework Task 2</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="the-input" />
+        <button id="add">Add Item</button>
+        <button id="remove">Remove Items</button>
+        <button id="hide">Hide Items</button>
+        <button id="show">Show Items</button>
+    </div>
+
+    <div id="container">
+        <ul id="the-ul">
+
+        </ul>
+    </div>
+
+    <script>
+        var theContainer = document.getElementById("container");
+        var theUl = document.getElementById("the-ul");
+        var theInput = document.getElementById("the-input");
+
+        var addBtn = document.getElementById("add");
+        var removeBtn = document.getElementById("remove");
+        var hideBtn = document.getElementById("hide");
+        var showBtn = document.getElementById("show");
+
+        function addItem() {
+            var itemValue = theInput.value;
+
+            if (itemValue) {
+                var theItem = document.createElement("li");
+                var theCheckbox = document.createElement("input");
+                theCheckbox.type = "checkbox";
+                theItem.appendChild(theCheckbox);
+                theItem.appendChild(document.createTextNode(itemValue));
+				
+                theUl.appendChild(theItem);
+            }
+        }
+
+        function removeItem() {
+            var allItems = document.querySelectorAll("input");
+
+            for (var i = 0; i < allItems.length; i++) {
+                if (allItems[i].checked) {
+                    theUl.removeChild(allItems[i].parentElement);
+                }
+            }
+        }
+
+        function hideItem() {
+            var allItems = document.querySelectorAll("input");
+
+            for (var i = 0; i < allItems.length; i++) {
+                if (allItems[i].checked) {
+                    allItems[i].parentElement.style.display = "none";
+                    allItems[i].checked = false;
+                }
+            }
+        }
+
+        function showItem() {
+            var allItems = document.querySelectorAll("input");
+
+            for (var i = 0; i < allItems.length; i++) {
+                if (allItems[i].parentElement.style.display === "none") {
+                    allItems[i].parentElement.style.display = "block";
+                }
+            }
+        }
+
+        addBtn.addEventListener("click", addItem, false);
+        removeBtn.addEventListener("click", removeItem, false);
+        hideBtn.addEventListener("click", hideItem, false);
+        showBtn.addEventListener("click", showItem, false);
+    </script>
+</body>
+</html>

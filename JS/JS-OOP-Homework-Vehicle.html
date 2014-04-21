@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var vehicleNS = (function () {
+            Function.prototype.inherit = function (parent) {
+                this.prototype = new parent();
+                this.prototype.constructor = this;
+            }
+
+//Base class--------PROPULSION UNIT------
+
+            function PropulsionUnit() {
+
+            }
+
+            PropulsionUnit.prototype.produceAcceleration = function () {
+                throw new Error("Must be override from its children!");
+            }
+
+            function Wheel(radius) {
+                PropulsionUnit.apply(this, arguments);
+                //PropulsionUnit.call(this, radius);
+                this.radius = radius;
+            }
+
+            Wheel.inherit(PropulsionUnit);
+
+            Wheel.prototype.produceAcceleration = function () {
+                var acceleration = 2 * Math.PI * this.radius;
+                return acceleration;
+            }
+
+            function Nozzle(power, afterburnerSwich) {
+                PropulsionUnit.apply(this, arguments);
+                this.power = power;
+                this.afterburnerSwich = afterburnerSwich;
+            }
+
+            Nozzle.inherit(PropulsionUnit);
+
+            /*Nozzle.prototype.produceAcceleration = function () {
+            }*/
+
+            Nozzle.prototype = {
+                produceAcceleration: function () {
+                    var acceleration = this.power;
+                    if (this.afterburnerSwitch) {
+                        acceleration *= 2;
+                    }
+                    return acceleration;
+                },
+
+                changeAfterburnerSwich: function (afterburnerSwichON) {
+                    this.afterburnerSwich = afterburnerSwichON;
+                }
+            }
+
+            function Propeller(fins, spinDirection) {
+                PropulsionUnit.apply(this, arguments);
+                this.fins = fins;
+                this.spinDirection = spinDirection;
+            }
+
+            var DirectionEnum = {
+                clockwise: 0,
+                conterClockwise: 1
+            }
+
+            Propeller.inherit(PropulsionUnit);
+
+            Propeller.prototype = {
+
+                produceAcceleration: function () {
+                    var acceleration = this.fins;
+
+                    if(this.spinDirection == DirectionEnum.clockwise){
+                        acceleration = 1 * acceleration;
+                    }
+                    else if(this.spinDirection == DirectionEnum.conterClockwise){
+                        acceleration = -1 * acceleration;
+                    }
+
+                    return acceleration;
+                },
+
+                changeSpinDirection: function(spinDirection){
+                    this.spinDirection = spinDirection;
+                }
+            }
+
+//Base class--------VEHICLE---------
+            function Vehicle(speed, propulsionUnits){
+                this.speed = speed;
+                this.propulsionUnits = propulsionUnits;
+            }
+
+            Vehicle.prototype.accelerate = function(){
+                for( var i = 0; i < propulsionUnits.length; i++){
+                    this.speed += propulsionUnits[i].produceAcceleration();
+                }
+            }
+
+            function LandVehicle(wheels){
+                Vehicle.apply(this, arguments);
+                this.wheels = wheels;
+            }
+
+            LandVehicle.inherit(Vehicle);
+
+            function AirVehicle(speed, nozzle){
+                Vehicle.apply(this, arguments);
+            }
+
+            AirVehicle.inherit(Vehicle);
+
+            AirVehicle.prototype.swichAfterburner = function(afterburnerSwichON){
+                for(var i = 0; i < this.propulsionUnits.length; i++){
+                    if(this.propulsionUnits[i] instanceof Nozzle){
+                        this.propulsionUnits[i].changeAfterburnerSwich(afterburnerSwichON);
+                    }
+                }
+            }
+
+            function WaterVehicle(speed, propeller){
+                Vehicle.apply(this, arguments);
+            }
+
+            WaterVehicle.inherit(Vehicle);
+
+            WaterVehicle.prototype.changeSpinDirection = function(spinDirection){
+                for(var i = 0; i < this.propulsionUnits.length; i++){
+                    if(this.propulsionUnits instanceof Propeller){
+                        this.propulsionUnits[i].changeSpinDirection(spinDirection);
+                    }
+                }
+            }
+
+            return{
+                Wheel: Wheel,
+                Nozzle: Nozzle,
+                Propeller: Propeller,
+                LandVehicle: LandVehicle,
+                AirVehicle: AirVehicle, 
+                WaterVehicle: WaterVehicle,
+
+                DirectionEnum: DirectionEnum
+
+            }
+        })();
+
+    </script>
+</body>
+</html>

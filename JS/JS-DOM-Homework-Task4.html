@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+   
+    <div id="content">
+    </div>
+
+    <script>
+        var contentDiv = document.getElementById("content");
+
+        var textArea = document.createElement("textarea");
+        textArea.textContent = "Some text here";     /*tuka bqh napisal textArea.innerHTML*/
+        textArea.id = "textArea";
+        contentDiv.appendChild(textArea);
+
+        var inputColorOne = document.createElement("input");
+        inputColorOne.type = "color";
+        inputColorOne.id = "colorOne";
+        /*inputColorOne.setAttribute("type", "color");*/
+        inputColorOne.onchange = changeTextColor;
+        contentDiv.appendChild(inputColorOne);
+
+        var inputColorTwo = document.createElement("input");
+        inputColorTwo.type = "color";
+        inputColorTwo.id = "colorTwo";
+        /*inputColorTwo.setAttribute("type", "color");*/
+        inputColorTwo.onchange = changeBackgroundColor;
+        contentDiv.appendChild(inputColorTwo);
+
+        function changeTextColor() {
+            return textArea.style.color = document.getElementById("colorOne").value;
+        }
+
+        function changeBackgroundColor() {
+             textArea.style.backgroundColor = document.getElementById("colorTwo").value;
+        }
+
+    </script>
+</body>
+</html>
